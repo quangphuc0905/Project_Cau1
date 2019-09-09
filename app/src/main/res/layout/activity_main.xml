@@ -58,10 +58,9 @@
         android:id="@+id/checkBox_luu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="84dp"
         android:layout_marginStart="84dp"
         android:layout_marginTop="28dp"
-        android:text="Luu mat khau"
+        android:text="Luu thong tin"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_mk" />
@@ -77,5 +76,16 @@
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox_luu" />
+
+    <Button
+        android:id="@+id/button_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="84dp"
+        android:text="Thoat"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/button_submit"
+        app:layout_constraintTop_toBottomOf="@+id/editText_mk" />
 
 </android.support.constraint.ConstraintLayout>

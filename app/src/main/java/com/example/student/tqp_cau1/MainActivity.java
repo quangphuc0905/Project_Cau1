@@ -1,5 +1,9 @@
 package com.example.student.tqp_cau1;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +16,9 @@ public class MainActivity extends AppCompatActivity {
 
     EditText tk,mk;
     CheckBox ckb;
-    Button btn;
+    Button btn,btn_close;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         mk = (EditText)findViewById(R.id.editText_mk);
         ckb = (CheckBox)findViewById(R.id.checkBox_luu);
         btn = (Button)findViewById(R.id.button_submit) ;
+        btn_close = (Button)findViewById(R.id.button_close);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,5 +48,35 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this,"Chào mừng bạn đăng nhập hệ thống, thông tin của bạn khong được lưu",Toast.LENGTH_SHORT).show();
             }
         });
+
+
+        final AlertDialog.Builder mydialog = new AlertDialog.Builder(this);
+        mydialog.setTitle("Thông Báo");
+        mydialog.setMessage("Bạn có muốn thoát không");
+
+        mydialog.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+
+
+        mydialog.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        btn_close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog alertDialog= mydialog.create();
+                alertDialog.show();
+            }
+        });
     }
+
 }
